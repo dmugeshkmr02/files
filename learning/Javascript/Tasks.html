@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1, maximum-scale=1,user-scalable = 0">
+<title>Javascript Learning</title>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js" ></script>
+<link href="https://fonts.googleapis.com/css?family=Lilita+One|Playball" rel="stylesheet">
+<link rel="stylesheet" href="css/custom.css" />
+<link rel="icon" type="image/png" href="http://www.awwwards.com/media/cache/thumb_job_50/awards/job/2016/10/5805de77dad06.jpg"/>
+<style type="text/css">
+
+</style>
+</head>
+<body>
+    <div class="wrapper">
+        <header></header>
+        <div class="content">
+            <blockquote ng-app="myApp" ng-controller="formController">
+                <h1>Welcome to India</h1>
+                <form name="loginForm" id="loginForm" ng-submit="loginSubmit()">
+                    <p>
+                        <label for="username">User Name</label>
+                        <input type="text" name="username" ng-model="username" id="username"/>
+                        <div class="error_div">
+                            <span ng-show="loginForm.username.$touched && loginForm.username.$invalid">Username already Touched & Invalid///</span>
+                            <span ng-show="loginForm.username.$dirty">Username Typing...</span>
+                        </div>
+                        <p>{{username}}</p>
+                    
+                    </p>
+                    <p>
+                        <label for="password">Password</label>
+                        <input type="password" name="password" minlength="4" maxlength="8" ng-model="password" id="password"/>
+                        <div class="error_div">
+                            <span ng-show="loginForm.password.$touched && loginForm.password.$invalid">password already Touched & Invalid///</span>
+                            <span ng-show="loginForm.password.loginForm.password.$dirty">Password Typing...</span>
+                            <span ng-show="loginForm.password.$valid">password correct!!</span>
+
+                            <span ng-show="loginForm.password.$error.maxlength">Max Length 8 Characters</span>
+                            <span ng-show="loginForm.password.$error.minlength">Min Length 4 Characters</span>
+                        </div>
+                        <p>{{password}}</p>
+                    </p>
+                    <p>
+                        <input type="submit" ng-disabled="loginForm.$invaid" name="submit"  value="Submit"/>
+                    </p>
+
+
+
+                </form>
+
+                <a href="#" ng-click="add()">Add 5+6</a>
+            </blockquote>
+        </div>
+
+    </div>
+</div>
+<script src="js/global.js"></script>
+<script src="js/angular.min.js"></script>
+
+//---------app---------//
+<script src="js/app.js"></script>
+
+//---------controller---------//
+<script src="js/controller/formController.js"></script>
+
+//---------Services---------//
+<script src="js/services/calc_services.js"></script>
+</body>
+</html>
+
