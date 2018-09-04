@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="no-js ie ie6" lang="en"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie ie7" lang="en"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"><![endif]-->
+<!--[if IE 9 ]><html class="no-js ie ie9" lang="en"><![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta http-equiv="Cache-control" content="no-cache"/>
+<title class="lang-headtitle">International container shipping and ocean freight provider | APL </title>
+<!-- Favicon and apple touch icons-->
+<link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="images/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon/favicon.ico"/>
+<link rel="stylesheet" type="text/css" href="style/custom.css"/>
+<!--[if IE]>
+<script type="text/javascript" src="javascript/html5shiv.js"></script>
+<![endif]-->
+<script type="text/javascript" src="javascript/jquery-1.11.1.js"></script>
+<script type="text/javascript" src="javascript/global.js"></script>
+<script type="text/javascript" src="javascript/respond.min.js"></script>
+<script>
+var WORDS_ZH = { 
+	"track_trace"       : "货物追踪",
+    "find" 				: "查询",
+	"trace" 			: "货物追踪", 
+	"bl" 				: "提单",
+	"containernumber" 	: "集装箱号",
+	"routing" 			: "航程",
+	"ok" 				: "好",
+	"summary" 			: "概要",
+	"bkgdetails" 		: "订舱详情",
+	"hazmat"			: "危险物品",
+	"bldetails"			: "提单详情",
+	"blclearance" 		: "提单清关",
+	"emptyerror"		: "提单/集装箱号不能为空",
+	"validerror"		: "输入有效的提单/集装箱号",
+	"eg" 				: "例如 001234567 或 APLU123456",
+	"headtitle" 		: "国际集装箱运输和海运货运提供者|APL"
+};
+
+var WORDS_EN = {
+	"track_trace"       : "Track & Trace", 
+    "find"				: "Find", 
+	"trace" 			: "Trace",
+	"bl" 				: "BL",
+	"containernumber" 	: "Container Number(s)",
+	"routing"			: "Routing",
+	"ok" 				: "OK",
+	"summary"			: "Summary",
+	"bkgdetails"		: "BKG Details",
+	"hazmat"			: "Hazmat",
+	"bldetails" 		: "BL Details",
+	"blclearance" 		: "BL Clearance",
+	"emptyerror"		: "BL / Container Number cannot be empty",
+	"validerror"		: "Enter valid BL / Container Number",
+	"eg" 				: "e.g. 001234567 or APLU123456",
+	"headtitle" 		: "International container shipping and ocean freight provider | APL "
+};
+var glang;
+window.onload = initialize;
+
+function initialize() {   
+  loadsLanguage("ZH");
+}
+
+function loadsLanguage(lang){
+	glang = lang;
+	/*fills all the input[type="button"] tags with class=lang pattern*/ 
+	$('input[type="button"][class^="lang"]').each(function(){
+		var temp = new Array();
+			temp = (this.className).split(" ");
+		var LangVar = temp[0].replace('lang-','');
+		var Text = window["WORDS_"+lang][LangVar];
+		$(this).val(Text);   
+	});
+
+	/*fills all the input[type="text"] tags with class=lang pattern*/ 
+	$('input[type="text"][class^="lang"]').each(function(){
+		var temp = new Array();
+			temp = (this.className).split(" ");
+		var LangVar = temp[0].replace('lang-','');
+		var Text = window["WORDS_"+lang][LangVar];
+		$(this).attr("placeholder",Text);
+	});
+
+	/*fills all the span tags with class=lang pattern*/ 
+	$('span[class^="lang"]').each(function(){
+		var temp = new Array();
+			temp = (this.className).split(" ");
+		var LangVar = temp[0].replace('lang-','');
+		var Text = window["WORDS_"+lang][LangVar];
+		$(this).text(Text);   
+	});
+	
+	/*fills all the p tags with class=lang pattern*/ 
+	$('p[class^="lang"]').each(function(){
+		var temp = new Array();
+			temp = (this.className).split(" ");
+		var LangVar = temp[0].replace('lang-','');
+		var Text = window["WORDS_"+lang][LangVar];
+		$(this).text(Text);   
+	});
+
+	/*fills all the title tags with class=lang pattern*/ 
+	$('title').each(function(){
+		var temp = new Array();
+			temp = (this.className).split(" ");
+		var LangVar = temp[0].replace('lang-','');
+		var Text = window["WORDS_"+lang][LangVar];
+		$(this).text(Text);   
+	});
+
+}
+</script>
+</head>
+<body>
+	<!--[if lte IE 9]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+	<![endif]-->
+	<main>
+		<!-- .header -->
+		<header class="header loginheader">
+			<!-- .logo -->
+			<div class="logo">
+				<a href="javascript:void(0);" class="ripple">
+                    <figure><img src="images/logo.png" alt="APL Logo" title="APL Logo" /></figure>
+                </a>
+			</div>
+			<h1 class="main_title"><span class="lang-track_trace">Track &amp; Trace</span></h1>
+		</header>
+		<!-- /.header -->
+		<!-- .main_container -->
+		<section class="main_container login_main_container">
+			<div class="container">
+				<div class="language_picker mT10">
+					<a href="javascript:void(0);" class="active" onclick="loadsLanguage('ZH');">中文</a><span> | </span><a href="javascript:void(0);" onclick="loadsLanguage('EN')">English</a>
+				</div>
+				<div class="clear"></div>
+				<div class="login taC">
+					<div class="login_form mT40">
+						<form action="#"  method="post" id="frmTrckMult" name="frmTrckMult" class="frmTrckMult" >
+							<h3 class="h3_title fw600 taL"><span class="lang-bl">BL</span> / <span class="lang-containernumber">Container Number(s)</span></h3>
+							<div class="input_fields_wrap">
+								<div class="pTB10 posRel">
+									<div class="add_field_button" class="position:relative;width:15%;float:left; ">
+										<a href="javascript:void(0);"><img src="images/plus.png" alt="Add new" title="Add new" /></a>
+									</div>
+									<input type="text" name="trackInput01" id="trackInput01" value="" class="lang-eg" placeholder="e.g. 001234567 or APLU123456" onkeypress="return onKeyValidate(event,alphanumeric,this.id);" required maxlength="11"/>
+									<span id="mtmsg1" class="lang-emptyerror errorMsg"></span><span  id="valmsg1" class="lang-validerror errorMsg"></span>
+								</div>
+							</div>
+							<div class="clear"></div>
+							<div class="pTB20">
+								<input type="button" id="submitBtn" class="lang-find ripple" onclick="validateInputBox();" required="required" value="Find"/>
+							</div>
+							
+							
+						</form>
+					</div>
+				</div>
+				<div class="login_overlay"></div>
+			</div>
+		</section>
+		<!-- /.main_container -->
+	</main>
+	
+<script type="text/javascript" src="javascript/jquery.materialripple.js"></script>
+<script type="text/javascript">
+	$(document).ready(function()
+	{
+		/*--------------// Material Ripple //-------------*/
+		$('.ripple').materialripple();
+
+		/*--------------// form validation //-------------*/
+		/*$("#submitBtn").click(function(){
+			var trackInput0 = $('#trackInput0').val();
+			if(trackInput0 == '')
+			{
+				$('.errorMsg').addClass('dispB');
+			}else
+			{
+				$('.errorMsg').addClass('dispN');
+			}
+		});*/
+
+		/*--------------// add input box //-------------*/
+		var max_fields = 3; //maximum input boxes allowed
+		var fields_wrapper = $(".input_fields_wrap"); //Fields wrapper
+		var x = 1; //initlal text box count
+		$(".add_field_button").click(function(e){ //on add input button click
+			
+			e.preventDefault();
+			if(x < max_fields)
+			{ //max input box allowed
+				x++; //text box increment
+				var val = "trackInput0"+x;
+				var mtmsg = "mtmsg" + x;
+				var valmsg = "valmsg" + x;
+				var removeBtn = "removeBtn" + x;
+				$(fields_wrapper).append('<div class="pTB10 posRel"><input type="text" name="'+val+'" id="'+val+'" value="" class="lang-eg" placeholder="e.g. 001234567 or APLU123456"  onkeypress="return onKeyValidate(event,alphanumeric,this.id);" required  maxlength="11"/><span id="'+mtmsg+'" class="lang-emptyerror errorMsg"></span><span id="'+valmsg+'" class="lang-validerror errorMsg"></span><a href="javascript:void(0);"  id="'+removeBtn+'" class="remove_field_button"><img src="images/minus.png" alt="remove" title="remove" /></a></div>'); //add input box
+				loadsLanguage(glang);
+				if(x == 3)
+				{
+					$("#removeBtn2").hide();
+				}
+
+			}
+		});
+		/*--------------// remove input box //-------------*/
+		$(fields_wrapper).on("click",".remove_field_button", function(e){ //user click on remove text
+			e.preventDefault(); 
+			$("#removeBtn2").show();
+			$(this).parent('div').remove();
+			var preip = document.getElementById("trackInput0"+x);
+			x--;
+		//	preip.id = "trackInput0"+x;
+		//	preip.name = "trackInput0"+x;
+		});
+	});
+	
+	/*--------------// lang-emptyerror //-------------*/
+	function emptyerror(mtmsg,valmsg)
+	{
+		$('#'+mtmsg).removeClass("dispN").addClass("dispB");
+		$('#'+valmsg).removeClass("dispB").addClass("dispN");
+	}
+	/*--------------// lang-validerror //-------------*/
+	function validerror(mtmsg,valmsg)
+	{
+		$('#'+valmsg).removeClass("dispN").addClass("dispB");
+		$('#'+mtmsg).removeClass("dispB").addClass("dispN");
+	}
+	function validateRemove(mtmsg,valmsg){
+	//alert("Function Call ");
+		$('#'+valmsg).addClass("dispN");
+		$('#'+mtmsg).addClass("dispN");
+	}
+
+	function removeRedborder(redbar){
+		$("#"+redbar).removeClass('redBdr');
+	}
+/*--------------// Validate keypress textbox //-------------*/
+	
+	
+var alpha = "[ A-Za-z]";
+var numeric = "[0-9]"; 
+var alphanumeric = "[ A-Za-z0-9]"; 
+
+///^[A-Za-z]{4}\d{4}$/
+
+function onKeyValidate(e,charVal,ids){
+
+       var regex = /^[A-Za-z]{4}\d{4}$/; 
+
+//alert(ids);
+    var keynum;
+    var keyChars = /[\x00\x08]/;
+    var validChars = new RegExp(charVal);
+    
+    var txt=document.getElementById(ids).value;
+    
+    //alert(txt);
+    
+    if(window.event)
+    {
+        keynum = e.keyCode;
+    }
+    else if(e.which)
+    {
+        keynum = e.which;
+    }      
+    var keychar = String.fromCharCode(keynum);        
+    if (!validChars.test(keychar) && !keyChars.test(keychar))   {
+            
+        return false
+       
+   } else{
+        var st=txt.substring(0, 4);
+        var len=0;
+          var letters = /^[A-Za-z]+$/;      
+   if(st.match(letters))
+     len=11;
+     else
+    len=9;  
+   // alert(len);
+             if(txt.length<len)
+            {
+            return keychar;
+            }
+            else
+            {
+            return false
+            }      
+    }
+}
+
+	
+	/*--------------// validateInputBox //-------------*/
+	function validateInputBox(){
+		var re = new RegExp("^[0-9]{9}$");
+		var reg = new RegExp("^[A-Za-z]{4}[0-9]{6}$");
+		var reg11 = new RegExp("^[A-Za-z]{4}[0-9]{7}$");
+		value1 = 0;
+		value2 = 0;
+		value3 = 0;
+		
+		if(document.getElementById("trackInput01").value == "" || document.getElementById("trackInput01").value == undefined ){ 	
+			emptyerror("mtmsg1","valmsg1");
+			loadsLanguage(glang);
+			document.getElementById("trackInput01").focus();
+			$("#trackInput01").addClass('redBdr');
+			
+			value1 = 1;
+		}else if(document.getElementById("trackInput01") && !((reg.test(document.getElementById("trackInput01").value) || re.test(document.getElementById("trackInput01").value)) || reg11.test(document.getElementById("trackInput01").value))){
+			validerror("mtmsg1","valmsg1");
+			loadsLanguage(glang);
+			$("#trackInput01").addClass('redBdr');
+			document.getElementById("trackInput01").focus();
+			value1 = 1;
+		}
+		if(document.getElementById("trackInput02") && document.getElementById("trackInput02").value == "" ){
+			
+			
+			emptyerror("mtmsg2","valmsg2");
+			loadsLanguage(glang);
+			$("#trackInput02").addClass('redBdr');
+			document.getElementById("trackInput02").focus();
+			value2 = 1;
+		}else if(document.getElementById("trackInput02") && !((reg.test(document.getElementById("trackInput02").value) || re.test(document.getElementById("trackInput02").value)) || reg11.test(document.getElementById("trackInput02").value))){
+			
+			//validateRemove("mtmsg1","valmsg1");
+			validerror("mtmsg2","valmsg2");
+			loadsLanguage(glang);
+			$("#trackInput02").addClass('redBdr');
+			document.getElementById("trackInput02").focus();
+			value2 = 1;
+		}
+		if(document.getElementById("trackInput03") && document.getElementById("trackInput03").value == "" ){
+			
+			emptyerror("mtmsg3","valmsg3");
+			loadsLanguage(glang);
+			$("#trackInput03").addClass('redBdr');
+			document.getElementById("trackInput03").focus();
+			value3 = 1;
+		}else if(document.getElementById("trackInput03") && !((reg.test(document.getElementById("trackInput03").value) || re.test(document.getElementById("trackInput03").value)) || reg11.test(document.getElementById("trackInput03").value))){
+			
+			validerror("mtmsg3","valmsg3");
+			loadsLanguage(glang);
+			$("#trackInput03").addClass('redBdr');
+			document.getElementById("trackInput03").focus();
+			value3 = 1;
+		}
+		
+		if(value1 == 0){
+		validateRemove("mtmsg1","valmsg1");
+		removeRedborder("trackInput01");
+		}
+		
+		if(value2 == 0){
+		validateRemove("mtmsg2","valmsg2");
+		removeRedborder("trackInput02");
+		}
+		
+		if(value3 == 0){
+		validateRemove("mtmsg3","valmsg3");
+		removeRedborder("trackInput03");
+		}
+		if(value1 == 0 && value2 == 0){
+		validateRemove("mtmsg1","valmsg1");
+		validateRemove("mtmsg2","valmsg2");
+		}
+		if(value1 == 0 && value2 == 0 && value3 ==0)
+		{
+		validateRemove("mtmsg1","valmsg1");
+		validateRemove("mtmsg2","valmsg2");
+		validateRemove("mtmsg3","valmsg3");
+		}
+		if(value1 == 1 || value2 == 1 || value3 == 1){
+		return;
+		}
+		if(document.getElementById("trackInput02") || document.getElementById("trackInput03")){
+			$("#mtmsg3").addClass('dispN');
+			$("#valmsg3").addClass('dispN');
+
+			//window.location.href = 'page2.html?lang='+glang;
+			//var path="http://homeport.apl.com/gentrack/trackingMain.do?"+queryString;
+			//document.frmTrckMult.action=encodeURI(path);
+			//document.frmTrckMult.submit();
+
+		}else{
+			var queryString="";
+			var sprtr="";
+			for(var i=1; i<=1;i++){
+				var inputVal=Trim(document.getElementById("trackInput0"+i).value);
+				var val=sprtr+"trackInput0"+i+"="+inputVal;
+				sprtr="&";
+				queryString=queryString+val;
+			}
+			//	window.location.href = 'page1.html?lang='+glang;
+			var path="http://homeport.apl.com/gentrackwechat/weTrackingMain.do?"+queryString;
+			document.frmTrckMult.action=path;
+			alert(path);
+			document.frmTrckMult.submit();
+		}
+	}
+
+	function Trim(str){  
+  		while(str.charAt(0) == (" ") ){str = str.substring(1);}
+  		while(str.charAt(str.length-1) ==" " ){str = str.substring(0,str.length-1);}
+  	return str;
+	}
+</script>
+</body>
+</html>
+
